@@ -4,20 +4,69 @@
   labels: [Other]
   icon: default
   attrs:
-    - name: value
-      type: number
-      default: 0
-      description: 需要传入的值
-  slots:
-    - name: default
-      description: 插入文本或 HTML。
-  events:
-    - name: change
-      description: 修改时触发
-      params:
-        - name: $event.param1
-          type: string
-          description: 参数1
-        - name: $event.param2
-          type: number
-          description: 参数2
+    - name: data-source
+      title: 数据源
+      type: Array<Item> | Function | Object
+      description: 集合类型变量或者输出参数为集合类型的逻辑
+      designer-value: "[{}, {}, {}]"
+      group: 数据属性
+    - name: data-schema
+      title: 数据类型
+      type: schema
+      description: 集合类型每一元素的数据类型
+      group: 数据属性
+      compType: dataTypeSelect
+    - name: title-field
+      title: 标签项标题
+      type: string
+      default: title
+      description: 数据源集合的元素，用于显示标签标题的属性
+      group: 数据属性
+    - name: value-field
+      title: 标签项标题值
+      type: string
+      default: value
+      description: 数据源集合的元素，用于标识标签值的属性
+      group: 数据属性
+    - name: default-header
+      title: 默认头部
+      type: string
+      default: 默认头部
+      description: 默认头部
+    - name: attr-A
+      title: 属性A
+      type: boolean
+      default: true
+      description: 属性A控制下方属性B和属性C的显示
+      group: 关联属性
+    - name: attr-B
+      title: 属性B
+      type: string
+      default: ''
+      description: 属性A为true时，属性B显示
+      dependency:
+        - attr-A: true
+      group: 关联属性
+    - name: attr-C
+      title: 属性C
+      type: string
+      default: ''
+      description: 属性A为false时，且属性B为空，属性C显示
+      dependency:
+        - attr-A: false
+        - attr-B: ''
+      group: 关联属性
+    - name: attr-D
+      title: 属性D
+      type: boolean
+      default: false
+      description: 属性D
+      toggleupdate:
+        - value: true
+          updateData:
+            attr-B: '属性D为true时，修改属性B的值'
+        - value: false
+          updateData:
+            attr-B: ''
+      group: 关联属性
+

@@ -1,0 +1,16 @@
+{
+  "lcap-usage-demo": {
+    "attributes": [
+      "data-source",
+      "data-schema",
+      "title-field",
+      "value-field",
+      "default-header",
+      "attr-A",
+      "attr-B",
+      "attr-C",
+      "attr-D"
+    ],
+    "description": "请在这里添加描述"
+  }
+}

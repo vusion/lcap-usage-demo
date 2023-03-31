@@ -1,0 +1,146 @@
+{
+    "symbol": "lcap-usage-demo",
+    "name": "扩展组件搭建示例",
+    "version": "0.1.1",
+    "icon": "default",
+    "repoAddr": "",
+    "depDescription": {},
+    "description": "请在这里添加描述",
+    "labels": [
+        "Other"
+    ],
+    "screenShot": "",
+    "blocks": "[{\"title\":\"基本用法\",\"description\":\"\",\"code\":\"<template>\\n<lcap-usage-demo \\n    titleField=\\\"title\\\"\\n    valueField=\\\"value\\\"\\n    :dataSource=\\\"[{\\n                title: '数据 1',\\n                value: '1',\\n            }, {\\n                title: '数据 2',\\n                value: '2',\\n            }, {\\n                title: '数据 3',\\n                value: '3',\\n            }]\\\"></lcap-usage-demo>\\n</template>\\n\"}]",
+    "jsonSchema": {
+        "name": "lcap-usage-demo",
+        "title": "扩展组件搭建示例",
+        "description": "请在这里添加描述",
+        "category": "Other",
+        "screenShot": "",
+        "drawings": "",
+        "blocks": [
+            {
+                "title": "基本用法",
+                "description": "",
+                "code": "<template>\n<lcap-usage-demo \n    titleField=\"title\"\n    valueField=\"value\"\n    :dataSource=\"[{\n                title: '数据 1',\n                value: '1',\n            }, {\n                title: '数据 2',\n                value: '2',\n            }, {\n                title: '数据 3',\n                value: '3',\n            }]\"></lcap-usage-demo>\n</template>\n"
+            }
+        ],
+        "attrs": [
+            {
+                "name": "data-source",
+                "title": "数据源",
+                "type": "Array<Item> | Function | Object",
+                "description": "集合类型变量或者输出参数为集合类型的逻辑",
+                "designer-value": "[{}, {}, {}]",
+                "group": "数据属性"
+            },
+            {
+                "name": "data-schema",
+                "title": "数据类型",
+                "type": "schema",
+                "description": "集合类型每一元素的数据类型",
+                "group": "数据属性",
+                "compType": "dataTypeSelect"
+            },
+            {
+                "name": "title-field",
+                "title": "标签项标题",
+                "type": "string",
+                "default": "title",
+                "description": "数据源集合的元素，用于显示标签标题的属性",
+                "group": "数据属性"
+            },
+            {
+                "name": "value-field",
+                "title": "标签项标题值",
+                "type": "string",
+                "default": "value",
+                "description": "数据源集合的元素，用于标识标签值的属性",
+                "group": "数据属性"
+            },
+            {
+                "name": "default-header",
+                "title": "默认头部",
+                "type": "string",
+                "default": "默认头部",
+                "description": "默认头部"
+            },
+            {
+                "name": "attr-A",
+                "title": "属性A",
+                "type": "boolean",
+                "default": true,
+                "description": "属性A控制下方属性B和属性C的显示",
+                "group": "关联属性"
+            },
+            {
+                "name": "attr-B",
+                "title": "属性B",
+                "type": "string",
+                "default": "",
+                "description": "属性A为true时，属性B显示",
+                "dependency": [
+                    {
+                        "attr-A": true
+                    }
+                ],
+                "group": "关联属性"
+            },
+            {
+                "name": "attr-C",
+                "title": "属性C",
+                "type": "string",
+                "default": "",
+                "description": "属性A为false时，或属性B为空，属性C显示",
+                "dependency": [
+                    {
+                        "attr-A": false
+                    },
+                    {
+                        "attr-B": ""
+                    }
+                ],
+                "group": "关联属性"
+            },
+            {
+                "name": "attr-D",
+                "title": "属性D",
+                "type": "boolean",
+                "default": false,
+                "description": "属性D",
+                "toggleupdate": [
+                    {
+                        "value": true,
+                        "updateData": {
+                            "attr-B": "属性D为true时，修改属性B的值"
+                        }
+                    },
+                    {
+                        "value": false,
+                        "updateData": {
+                            "attr-B": ""
+                        }
+                    }
+                ],
+                "group": "关联属性"
+            }
+        ],
+        "slots": [
+            {
+                "concept": "Slot",
+                "name": "bottom",
+                "title": "文本插入默认文本",
+                "description": "插入文本。",
+                "empty-background": "add-sub",
+                "support": [
+                    {
+                        "name": "child",
+                        "title": "子选项",
+                        "snippet": "<u-text text=\"文本\"></u-text>"
+                    }
+                ]
+            }
+        ],
+        "children": []
+    }
+}

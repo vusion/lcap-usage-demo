@@ -1,0 +1,38 @@
+{
+  "lcap-usage-demo/data-source": {
+    "type": "Array<Item> | Function | Object",
+    "description": "集合类型变量或者输出参数为集合类型的逻辑"
+  },
+  "lcap-usage-demo/data-schema": {
+    "type": "schema",
+    "description": "集合类型每一元素的数据类型"
+  },
+  "lcap-usage-demo/title-field": {
+    "type": "string",
+    "description": "数据源集合的元素，用于显示标签标题的属性"
+  },
+  "lcap-usage-demo/value-field": {
+    "type": "string",
+    "description": "数据源集合的元素，用于标识标签值的属性"
+  },
+  "lcap-usage-demo/default-header": {
+    "type": "string",
+    "description": "默认头部"
+  },
+  "lcap-usage-demo/attr-A": {
+    "type": "boolean",
+    "description": "属性A控制下方属性B和属性C的显示"
+  },
+  "lcap-usage-demo/attr-B": {
+    "type": "string",
+    "description": "属性A为true时，属性B显示"
+  },
+  "lcap-usage-demo/attr-C": {
+    "type": "string",
+    "description": "属性A为false时，或属性B为空，属性C显示"
+  },
+  "lcap-usage-demo/attr-D": {
+    "type": "boolean",
+    "description": "属性D"
+  }
+}
