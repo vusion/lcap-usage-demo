@@ -42,12 +42,6 @@ export default {
     components: {
         SEmpty,
     },
-    computed: {
-        // 平台上list数据源可能包括在data.list中，也可能直接在data中，所以需要统一处理
-        innerDataSource() {
-            return this.currentDataSource.data.list || this.currentDataSource.data || this.currentDataSource;
-        },
-    },
 };
 </script>
 

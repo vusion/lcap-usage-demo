@@ -60,7 +60,7 @@
       title: 属性D
       type: boolean
       default: false
-      description: 属性D
+      description: 属性D为true时，设置文本；属性D为false时，清空文本
       toggleupdate:
         - value: true
           updateData:
